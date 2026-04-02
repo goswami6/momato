@@ -17,7 +17,7 @@ const dbConfig = {
 // Enable SSL for cloud databases (Aiven, etc.)
 if (process.env.DB_SSL === 'true') {
   dbConfig.dialectOptions = {
-    ssl: { rejectUnauthorized: true },
+    ssl: { rejectUnauthorized: false },
   };
 }
 
