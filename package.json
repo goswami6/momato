@@ -1,0 +1,16 @@
+{
+  "name": "momato",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c blue,green \"npm run backend\" \"npm run frontend\"",
+    "start": "cd backend && node server.js",
+    "backend": "cd backend && node server.js",
+    "frontend": "cd frontend && npx vite",
+    "build": "cd backend && npm install",
+    "install-all": "cd backend && npm install && cd ../frontend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
