@@ -58,13 +58,13 @@ app.get('/api/health', (req, res) => {
 const frontendPath = path.join(__dirname, '..', 'frontend', 'dist');
 app.use(express.static(frontendPath));
 
-// Error handler
-app.use(errorHandler);
-
 // SPA fallback — serve index.html for all non-API routes
 app.get('*', (req, res) => {
   res.sendFile(path.join(frontendPath, 'index.html'));
 });
+
+// Error handler
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
